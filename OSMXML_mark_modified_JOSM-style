@@ -17,7 +17,7 @@ use XML::LibXML;
 # 2 - produce a copy of this file ($JOSMfile)
 # 3 - edit $JOSMfile to your heart's content
 # 4 - run this script to add action="modify" to the XML element of each Openstreetmap object that
-       differs between $originalOSMfile and $JOSMfile
+#       differs between $originalOSMfile and $JOSMfile
 # 5 - review $JOSMfile in JOSM
 # 6 - upload your contribution to Openstreetmap
 #
