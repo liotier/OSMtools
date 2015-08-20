@@ -45,6 +45,7 @@ foreach my $change ($diff->compare($originalOSMfile, $JOSMfile)) { print "$chang
     until(($JOSMchange->nodeName eq "node") or ($JOSMchange->nodeName eq "way") or ($JOSMchange->nodeName eq "relation"))
     { $JOSMchange = $JOSMchange->parentNode; }
     $JOSMchange->setAttribute("action", "modify");
+    # Printing to stdout superfluous but gives you a glimpse of modified elements
     print "$JOSMchange->nodeName()\n";
   }
   
