@@ -39,6 +39,8 @@ my $diff = XML::SemanticDiff->new();
 
 foreach my $change ($diff->compare($originalOSMfile, $JOSMfile)) {
     # "node" in get_node() and nodeName() must be understood in its XML DOM context, not its Openstreetmap meaning
+    # In DOM, first node is 1 not 0
+    # We want the first one - actually in this case it is the only one, but find returns a node list
     my $JOSMchange = $JOSM->find("$change->{context}")->get_node(1);
     my $nodeName = $JOSMchange->nodeName;
     # $JOSMchange may be an attribute - we want the parent Openstreetmap object
